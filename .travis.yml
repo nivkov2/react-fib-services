@@ -9,7 +9,7 @@ before_install:
 script:
   - docker run -e CI=true nivkov2/react-test npm test
 
-after_seccess:
+after_success:
   - docker build -t nivkov2/multi-client ./client
   - docker build -t nivkov2/multi-nginx ./nginx
   - docker build -t nivkov2/multi-server ./server
